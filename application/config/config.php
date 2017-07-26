@@ -49,7 +49,7 @@ $config['APP_WEB_HTTP'] = 'http://www.npeht.com';
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://144.217.255.53/npeht_api/';
+$config['base_url'] = 'http://localhost:8080/npeht_api/';
 
 /*
 |--------------------------------------------------------------------------

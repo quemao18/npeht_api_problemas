@@ -143,6 +143,8 @@ class Users_model extends CI_Model
             "email" => $user->email,
             "phone" => $user->phone,
             "address" => $user->address,
+            "id_question" => $user->id_question,
+            "answer" => $user->answer,
             //"password" => md5($user->password), 
             "date_update" => date('Y-m-d H:i:s')
         );
@@ -161,6 +163,8 @@ class Users_model extends CI_Model
             "phone" => $user->phone,
             "address" => $user->address,
             "password" => md5($user->password), 
+            "id_question" => $user->id_question,
+            "answer" => $user->answer,
             "date_update" => date('Y-m-d H:i:s')
         );
         //$query = $this->db->update('users', $data, array('id_user' => $user->id_user));
@@ -228,7 +232,7 @@ class Users_model extends CI_Model
 					"select email from users where email = '$email' "
 			);
 
-		if($id->num_rows()>=2)
+		if($id->num_rows()>1)
 			return true;
 		else
 			return false;
