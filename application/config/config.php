@@ -1,10 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-<<<<<<< HEAD
 date_default_timezone_set('America/La_Paz');
-=======
-
->>>>>>> f26e49a7e79576c095da5bd22f4db240a99f70a1
 /*
 |--------------------------------------------------------------------------
 | Variables API
@@ -26,18 +22,12 @@ $config['APP_EMAIL_SMTP_USER'] = 'info@rodasalias.com';
 $config['APP_EMAIL_SMTP_PASS'] = '';
 //end smtp config
 
-<<<<<<< HEAD
 $config['LIMIT'] = 50;
-=======
->>>>>>> f26e49a7e79576c095da5bd22f4db240a99f70a1
 
 $config['APP_SLOGAN'] = '';
 $config['APP_WEB'] = 'www.npeht.com';
 $config['APP_WEB_HTTP'] = 'http://www.npeht.com';
-<<<<<<< HEAD
 $config['UPLOAD_DIR'] = 'http://144.217.255.53/banners/';
-=======
->>>>>>> f26e49a7e79576c095da5bd22f4db240a99f70a1
 
 /*
 |--------------------------------------------------------------------------
@@ -61,12 +51,9 @@ $config['UPLOAD_DIR'] = 'http://144.217.255.53/banners/';
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
-if($_SERVER['HTTP_HOST']=='144.217.255.53')
-$config['base_url'] = 'http://144.217.255.53/npeht_api/';
+if($_SERVER['HTTP_HOST']=='www.npeht.com')
+$config['base_url'] = 'http://api.nepht/api/';
 else
-=======
->>>>>>> f26e49a7e79576c095da5bd22f4db240a99f70a1
 $config['base_url'] = 'http://localhost:8080/npeht_api/';
 
 /*
