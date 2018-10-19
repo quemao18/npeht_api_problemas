@@ -403,7 +403,11 @@ $config['rest_key_name'] = 'X-API-KEY';
 |   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 |
 */
+<<<<<<< HEAD
 $config['rest_enable_logging'] = FALSE;
+=======
+$config['rest_enable_logging'] = TRUE;
+>>>>>>> f26e49a7e79576c095da5bd22f4db240a99f70a1
 
 /*
 |--------------------------------------------------------------------------

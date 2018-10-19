@@ -182,7 +182,11 @@ class CI_Loader {
 	 * Loads and instantiates libraries.
 	 * Designed to be called from application controllers.
 	 *
+<<<<<<< HEAD
 	 * @param	mixed	$library	Library name
+=======
+	 * @param	string	$library	Library name
+>>>>>>> f26e49a7e79576c095da5bd22f4db240a99f70a1
 	 * @param	array	$params		Optional parameters to pass to the library class constructor
 	 * @param	string	$object_name	An optional object name to assign to
 	 * @return	object
@@ -1037,6 +1041,7 @@ class CI_Loader {
 			return $this->_ci_load_stock_library($class, $subdir, $params, $object_name);
 		}
 
+<<<<<<< HEAD
 		// Safety: Was the class already loaded by a previous call?
 		if (class_exists($class, FALSE))
 		{
@@ -1057,6 +1062,8 @@ class CI_Loader {
 			return $this->_ci_init_library($class, '', $params, $object_name);
 		}
 
+=======
+>>>>>>> f26e49a7e79576c095da5bd22f4db240a99f70a1
 		// Let's search for the requested library file and load it.
 		foreach ($this->_ci_library_paths as $path)
 		{
@@ -1067,8 +1074,32 @@ class CI_Loader {
 			}
 
 			$filepath = $path.'libraries/'.$subdir.$class.'.php';
+<<<<<<< HEAD
 			// Does the file exist? No? Bummer...
 			if ( ! file_exists($filepath))
+=======
+
+			// Safety: Was the class already loaded by a previous call?
+			if (class_exists($class, FALSE))
+			{
+				// Before we deem this to be a duplicate request, let's see
+				// if a custom object name is being supplied. If so, we'll
+				// return a new instance of the object
+				if ($object_name !== NULL)
+				{
+					$CI =& get_instance();
+					if ( ! isset($CI->$object_name))
+					{
+						return $this->_ci_init_library($class, '', $params, $object_name);
+					}
+				}
+
+				log_message('debug', $class.' class already loaded. Second attempt ignored.');
+				return;
+			}
+			// Does the file exist? No? Bummer...
+			elseif ( ! file_exists($filepath))
+>>>>>>> f26e49a7e79576c095da5bd22f4db240a99f70a1
 			{
 				continue;
 			}
@@ -1113,6 +1144,7 @@ class CI_Loader {
 				$prefix = config_item('subclass_prefix');
 			}
 
+<<<<<<< HEAD
 			$property = $object_name;
 			if (empty($property))
 			{
@@ -1124,6 +1156,18 @@ class CI_Loader {
 			if ( ! isset($CI->$property))
 			{
 				return $this->_ci_init_library($library_name, $prefix, $params, $object_name);
+=======
+			// Before we deem this to be a duplicate request, let's see
+			// if a custom object name is being supplied. If so, we'll
+			// return a new instance of the object
+			if ($object_name !== NULL)
+			{
+				$CI =& get_instance();
+				if ( ! isset($CI->$object_name))
+				{
+					return $this->_ci_init_library($library_name, $prefix, $params, $object_name);
+				}
+>>>>>>> f26e49a7e79576c095da5bd22f4db240a99f70a1
 			}
 
 			log_message('debug', $library_name.' class already loaded. Second attempt ignored.');
@@ -1145,8 +1189,15 @@ class CI_Loader {
 				{
 					return $this->_ci_init_library($library_name, $prefix, $params, $object_name);
 				}
+<<<<<<< HEAD
 
 				log_message('debug', $path.' exists, but does not declare '.$prefix.$library_name);
+=======
+				else
+				{
+					log_message('debug', $path.' exists, but does not declare '.$prefix.$library_name);
+				}
+>>>>>>> f26e49a7e79576c095da5bd22f4db240a99f70a1
 			}
 		}
 
@@ -1164,8 +1215,15 @@ class CI_Loader {
 					$prefix = config_item('subclass_prefix');
 					break;
 				}
+<<<<<<< HEAD
 
 				log_message('debug', $path.' exists, but does not declare '.$subclass);
+=======
+				else
+				{
+					log_message('debug', $path.' exists, but does not declare '.$subclass);
+				}
+>>>>>>> f26e49a7e79576c095da5bd22f4db240a99f70a1
 			}
 		}
 
